@@ -9,7 +9,10 @@
 require('database.php');
 
 
-$query = '';// PUT YOUR SQL QUERY HERE
+$query = 'SELECT customers.customerID, customers.emailAddress, customers.firstName, 
+            customers.lastName, addresses.line1, addresses.city, addresses.state, 
+            addresses.zipCode, addresses.phone from customers INNER JOIN addresses 
+            on customers.customerID = addresses.customerID';// PUT YOUR SQL QUERY HERE
 // Example: $query = 'SELECT * FROM customers';
 
 $statement = $db->prepare($query);
